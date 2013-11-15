@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register DeliveryGuys</title>
+        <link rel = "stylesheet" type = "text/css" href = "./sign_up.css">
+    </head>
+    <body>
+    <div class = "signup_all">
+        <h1 id = "signup_h1">Sign Up</h1>
+        <ul class = "tabrow">
+            <li id = "tab1" class = "selected" onclick = "tab_switch(this.id);">Customers</li>
+            <li id = "tab2" onclick = "tab_switch(this.id);">Shop Owners</li>
+        </ul>
+        <section id = "cus_form" style = "display: inline-block;">
+            <form method="post">
+                <p>
+                    Username<br>
+                    <input type = "text" name = "signup_uname"><br>
+                    Email<br>
+                    <input type = "email" name = "signup_email"><br>
+                    Password<br>
+                    <input type = "password" name = "signup_psw"><br>
+                    Comfirm Password<br>
+                    <input type = "password"><br>
+                    <input type = "submit" value = "Sign Up">
+                    <input type = "reset" value = "Reset">
+                </p>
+            </form>
+        </section>
+        <section id = "owners_form" style = "display: none;">
+            <form method = "post">
+                <p id = "owners_left">
+                    Username<br>
+                    <input type = "text" name = "signup_uname"><br>
+                    Email<br>
+                    <input type = "email" name = "signup_email"><br>
+                    Password<br>
+                    <input type = "password" name = "signup_psw"><br>
+                    Comfirm Password<br>
+                    <input type = "password"><br>
+                    First Name<br>
+                    <input type = "text" name = "signup_fname"><br>
+                    Last Name<br>
+                    <input type = "text" name = "signup_lname"><br>
+                    Phone Number:<br>
+                    <input type = "tel" name = "signup_phone"><br>
+                </p>
+                <p id = "owners_right">
+                    <strong>Address</strong><br>
+                    Street Address<br>
+                    <input type = "text" name = "signup_straddr"><br>
+                    City<br>
+                    <input type = "text" name = "signup_city"><br>
+                    State<br>
+                    <select id = "states_sel">
+                    </select><br>
+                    Zip Code<br>
+                    <input type = "text" name = "signup_zcode"><br>
+                    <input type = "submit" value = "Sign Up">
+                    <input type = "reset" value = "Reset">
+                </p>
+            </form>
+        </section>
+        <script src = "./sign_up.js"></script>
+    </div>
+    </body>
+</html>
