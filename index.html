@@ -2,17 +2,79 @@
 <html>
 <head>
     <title>Welcome to DeliveryGuys!</title>
+    <link rel = "stylesheet" type = "text/css" href = "./sign_up/sign_up.css">
+    <link rel = "stylesheet" type = "text/css" href = "./index.css"
 </head>
 <body>
-    <h1>Welcome to DeliveryGuys!</h1>
+    <h1>DeliveryGuys!</h1>
     <p>Hello, guest!
-        <a href = "sign_up.html">Sign Up</a>
-        <a href = "login.html">Log In</a>
+        <a href = "#sign_up" onclick = "signup_popup()">Sign Up</a>
+        <a href = "#login" onclick = "login_popup()">Log In</a>
     </p>
     <form method="post">
         <input type = "text" name = "search_cont">
         <br>
         <input type = "submit" value = "Search">
     </form>
+        <div id = "fade" style = "display: none;" onclick = "signup_hide()"></div>
+        <div id = "login" style = "display: none;">
+            <form method = "post">
+                <h2>Login</h2>
+                <input type = "text" name = "login_uname_email" placeholder = "Username or Email"><br>
+                <input type = "password" name = "login_psw" placeholder = "Password"><br>
+                <p class = "form_buttons">
+                    <input type = "reset" onclick = "signup_hide()" value = "Cancel">
+                    <input type = "submit" value = "Login">
+                </p>
+            </form>
+        </div>
+        <div id = "signup_all" style = "display: none;">
+            <!-- <h1 id = "signup_h1">Sign Up</h1> -->
+            <ul class = "tabrow">
+                <li id = "tab1" class = "selected" onclick = "tab_switch(this.id);">Customers</li>
+                <li id = "tab2" onclick = "tab_switch(this.id);">Shop Owners</li>
+            </ul>
+            <section id = "cus_form" style = "display: inline-block;">
+                <form method="post">
+                    <p>
+                        <input type = "text" name = "signup_uname" placeholder = "Username"><br>
+                        <input type = "email" name = "signup_email" placeholder = "Email"><br>
+                        <input type = "password" name = "signup_psw" placeholder = "Password"><br>
+                        <input type = "password" name = "confirm_psw" placeholder = "Comfirm Password"><br>
+                        <p class = "form_buttons">
+                            <input type = "reset" value = "Reset">
+                            <input type = "submit" value = "Sign up">
+                        </p>
+                    </p>
+                </form>
+            </section>
+            <section id = "owners_form" style = "display: none;">
+                <form method = "post">
+                    <p id = "owners_left">
+                        <input type = "text" name = "signup_uname" placeholder = "Username"><br>
+                        <input type = "email" name = "signup_email" placeholder = "Email"><br>
+                        <input type = "password" name = "signup_psw" placeholder = "Password"><br>
+                        <input type = "password" name = "comfirm_psw" placeholder = "Comfirm Password"><br>
+                        <input type = "text" name = "signup_fname" placeholder = "First Name"><br>
+                        <input type = "text" name = "signup_lname" placeholder = "Last Name"><br>
+                        <input type = "tel" name = "signup_phone" placeholder = "Telephone"><br>
+                    </p>
+                    <p id = "owners_right">
+                        <input type = "text" name = "signup_straddr" placeholder = "Street Address"><br>
+                        <input type = "text" name = "signup_city" placeholder = "City"><br>
+                        <select id = "states_sel">
+                        </select><br>
+                        <input type = "text" name = "signup_zcode" placeholder = "Zip-Code"><br>
+                        <p class = "form_buttons">
+                            <input type = "reset" value = "Reset">
+                            <input type = "submit" value = "Sign up">
+                        </p>
+                    </p>
+                </form>
+            </section>
+        </div>
+        <script src = "./sign_up/sign_up.js"></script>
+        <script src = "./index.js"></script>
+    </div>
 </body>
 </html>

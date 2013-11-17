@@ -1,0 +1,50 @@
+#signup_all {
+    /*width: 450px;
+    height: 350px;*/
+    width: 350px;
+    height: 300px;
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    margin-top: -150px;
+    /*margin-left: -220px;*/
+    margin-left: -180px;
+    background-color: #F7F7F7;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 11; /* 1px higher than the overlay layer */
+}
+
+#fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+#login {
+    /*width: 450px;
+    height: 350px;*/
+    width: 350px;
+    height: 250px;
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    margin-top: -150px;
+    /*margin-left: -220px;*/
+    margin-left: -180px;
+    background-color: #F7F7F7;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 11; /* 1px higher than the overlay layer */
+}
+
+#login input[type = "text"],
+#login input[type = "password"]{
+    margin: 8px;
+    height: 20px;
+    width: 240px;
+}

@@ -9,7 +9,7 @@ for (var i = 0; i != arr_states.length; i++)
     states_selet.add(tmp_option, null);
 }
 
-//tab switch
+//tab switch function
 var tab_switch = function(id)
 {
     arr_li = document.getElementsByTagName("li");
@@ -23,10 +23,17 @@ var tab_switch = function(id)
     {
         document.getElementById("cus_form").style.display = "inline-block";
         document.getElementById("owners_form").style.display = "none";
+        var signup_all = document.getElementById("signup_all");
+        signup_all.style.height = "300px";
+        signup_all.style.width = "350px";
+        signup_all.style.marginLeft = "-180px";
     }
     else if (id == "tab2")
     {
         document.getElementById("cus_form").style.display = "none";
         document.getElementById("owners_form").style.display = "inline-block";
+        document.getElementById("signup_all").style.height = "350px";
+        document.getElementById("signup_all").style.width = "450px";
+        document.getElementById("signup_all").style.marginLeft = "-230px";
     }
 };

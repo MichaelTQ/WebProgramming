@@ -1,0 +1,172 @@
+#signup_all {
+    width: 450px;
+}
+
+#cus_form, #owners_form {
+    /*width: 399px;*/
+    width: 360px;
+    margin: 0px;
+    padding: 0px;
+    /*border-bottom: 1px solid #AAA;
+    border-left: 1px solid #AAA;
+    border-right: 1px solid #AAA;*/
+}
+
+#cus_form input[type = "text"],
+#cus_form input[type = "email"],
+#cus_form input[type = "password"],
+#cus_form input[type = "tel"]{
+    margin: 8px;
+    height: 20px;
+    width: 240px;
+}
+
+#owners_form input[type = "text"],
+#owners_form input[type = "email"],
+#owners_form input[type = "password"],
+#owners_form input[type = "tel"]{
+    margin: 8px;
+    height: 15px;
+    width: 150px;
+}
+
+#states_sel {
+    margin: 8px;
+}
+
+#owners_left {
+    margin-top: 0px;
+    float: left;
+    text-align: left;
+}
+
+#owners_right {
+    margin-top: 0px;
+    float: right;
+    text-align: left;
+}
+
+.form_buttons input[type = "submit"],
+.form_buttons input[type = "reset"]
+{
+    text-align: center;
+    font-size: 12   px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    width: 65px;
+    height: 25px;
+    margin-left: 8px;
+    background-color: #FFF;
+    border: 1px solid #999;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background: -webkit-gradient(linear, left top, left bottom, from(#DDD), to(#EFEFEF));
+    background: -moz-linear-gradient(top, #DDD, #EFEFEF);
+}
+
+.form_buttons input[type = "submit"]:hover,
+.form_buttons input[type = "reset"]:hover
+{
+    text-decoration: none;
+}
+
+.form_buttons input[type = "submit"]:active,
+.form_buttons input[type = "reset"]:active
+{
+    position: relative;
+    top: 1px;
+}
+
+#signup_h1 {
+    text-align: center;
+    margin: 10;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%
+}
+
+.tabrow {
+  text-align: center;
+  list-style: none;
+  margin: 10px 0px 0px;
+  padding: 0;
+  line-height: 35px;
+  height: 37px;
+  overflow: hidden;
+  font-size: 12px;
+  font-family: arial;
+  position: relative;
+}
+
+.tabrow li {
+  border: 1px solid #AAA;
+  background: #D1D1D1;
+  background: -o-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+  background: -ms-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+  background: -moz-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+  background: -webkit-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+  background: linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+  display: inline-block;
+  position:relative;
+  z-index: 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 #F7F7F7;
+  text-shadow: 0 1px #F7F7F7;
+  margin: 0 -5px;
+  padding: 0 20px;
+}
+
+.tabrow a {
+  color: #555;
+  text-decoration: none;
+}
+
+.tabrow li.selected {
+  background: #F7F7F7;
+  color: #333;
+  z-index: 2;
+  border-bottom-color: #F7F7F7;
+}
+
+.tabrow:after {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #AAA;
+  z-index: 1;
+}
+
+.tabrow li:before,
+.tabrow li:after {
+  border: 1px solid #AAA;
+  position: absolute;
+  bottom: -1px;
+  width: 6px;
+  height: 6px;
+  content: " ";
+}
+
+.tabrow li:before  {
+  left: -7px;
+  border-bottom-right-radius: 6px;
+  border-width: 0px 1px 1px 0px;
+  box-shadow: 2px 2px 0 #D1D1D1;
+}
+
+.tabrow li:after {
+  right: -7px;
+  border-bottom-left-radius: 6px;
+  border-width: 0px 0px 1px 1px;
+  box-shadow: -2px 2px 0 #D1D1D1;
+}
+
+.tabrow li.selected:before {
+  box-shadow: 2px 2px 0 #F7F7F7;
+}
+
+.tabrow li.selected:after {
+  box-shadow: -2px 2px 0 #F7F7F7;
+}
