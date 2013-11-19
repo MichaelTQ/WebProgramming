@@ -3,19 +3,22 @@
 <head>
     <title>Welcome to DeliveryGuys!</title>
     <link rel = "stylesheet" type = "text/css" href = "./sign_up/sign_up.css">
-    <link rel = "stylesheet" type = "text/css" href = "./index.css"
+    <link rel = "stylesheet" type = "text/css" href = "./index.css">
 </head>
 <body>
-    <h1>DeliveryGuys!</h1>
-    <p>Hello, guest!
+    <section id = "signup_login_links">
+        Hello, guest!
         <a href = "#sign_up" onclick = "signup_popup()">Sign Up</a>
         <a href = "#login" onclick = "login_popup()">Log In</a>
-    </p>
-    <form method="post">
-        <input type = "text" name = "search_cont">
-        <br>
-        <input type = "submit" value = "Search">
-    </form>
+    </section>
+    <br>
+    <section class = "search_form">
+        <!-- <h1>DeliveryGuys!</h1> -->
+        <img src = "./icons/web_logo.png">
+        <form method="post">
+            <input type = "text" name = "search_cont" placeholder = "Search...">
+        </form>
+    </section>
         <div id = "fade" style = "display: none;" onclick = "signup_hide()"></div>
         <div id = "login" style = "display: none;">
             <form method = "post">
@@ -75,6 +78,5 @@
         </div>
         <script src = "./sign_up/sign_up.js"></script>
         <script src = "./index.js"></script>
-    </div>
 </body>
 </html>

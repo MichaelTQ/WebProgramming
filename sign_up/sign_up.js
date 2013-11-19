@@ -12,7 +12,7 @@ for (var i = 0; i != arr_states.length; i++)
 //tab switch function
 var tab_switch = function(id)
 {
-    arr_li = document.getElementsByTagName("li");
+    var arr_li = [document.getElementById("tab1"), document.getElementById("tab2")];
     for (var j = 0; j != arr_li.length; j++)
     {
         arr_li[j].className = "";
