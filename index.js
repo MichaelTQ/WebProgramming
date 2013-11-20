@@ -20,3 +20,12 @@ function login_popup()
     document.getElementById('login').style.display = "inline-block";
     document.getElementById('fade').style.display = 'inline-block';
 }
+
+function myValidation()
+{
+    var myForm = document.getElementById('index_search_form');
+    if (myForm.getElementsByTagName('input')[0].value == '')
+    {
+        return false;
+    }
+}

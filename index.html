@@ -15,7 +15,7 @@
     <section class = "search_form">
         <!-- <h1>DeliveryGuys!</h1> -->
         <img src = "./icons/web_logo.png">
-        <form method="post">
+        <form method="post" action = "./restaurants/restaurant_list.php" id = "index_search_form" onsubmit = "return myValidation();">
             <input type = "text" name = "search_cont" placeholder = "Search...">
         </form>
     </section>
@@ -38,7 +38,7 @@
                 <li id = "tab2" onclick = "tab_switch(this.id);">Shop Owners</li>
             </ul>
             <section id = "cus_form" style = "display: inline-block;">
-                <form method="post">
+                <form method="post" action="./restaurants/restaurant_list.html">
                     <p>
                         <input type = "text" name = "signup_uname" placeholder = "Username"><br>
                         <input type = "email" name = "signup_email" placeholder = "Email"><br>
