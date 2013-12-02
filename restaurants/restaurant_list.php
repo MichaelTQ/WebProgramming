@@ -51,11 +51,7 @@ else
                         <li>
                             <a href = "./restaurant_1.html">
                             <article class = "chopped_img">
-<<<<<<< HEAD
                                 <img src="./rest_pics/rest_icons/1.JPG" width="100px">
-=======
-                                <img src="http://lorempixum.com/100/100/nature/1">
->>>>>>> 69bf85535f305e8634d350688d1fb96b690aa2b3
                             </article>
                           <h3 class = "rest_title_list">Mr Wraps</h3>
                           <p class = "rest_address_list">741 Garden St, Hoboken NJ 07030</p>
@@ -66,11 +62,7 @@ else
                         <li>
                             <a href = "./restaurant_2.html">
                           <article class = "chopped_img">
-<<<<<<< HEAD
                             <img src="./rest_pics/rest_icons/2.jpg" width="100px">
-=======
-                            <img src="http://lorempixum.com/100/100/nature/2">
->>>>>>> 69bf85535f305e8634d350688d1fb96b690aa2b3
                         </article>
                           <h3 class = "rest_title_list">H&amp;S Giovanni's</h3>
                           <p class = "rest_address_list">603 Washington St, Hoboken NJ 07030</p>
@@ -81,11 +73,7 @@ else
                         <li>
                             <a href = "./restaurant_3.html">
                           <article class = "chopped_img">
-<<<<<<< HEAD
                             <img src="./rest_pics/rest_icons/3.JPG" width="100px">
-=======
-                            <img src="http://lorempixum.com/100/100/nature/3">
->>>>>>> 69bf85535f305e8634d350688d1fb96b690aa2b3
                         </article>
                           <h3 class = "rest_title_list">10th &amp; Willow</h3>
                           <p class = "rest_address_list">935 Willow Ave, Hoboken NJ 07030</p>
@@ -96,11 +84,7 @@ else
                         <li>
                             <a href = "./restaurant_4.html">
                           <article class = "chopped_img">
-<<<<<<< HEAD
                             <img src="./rest_pics/rest_icons/4.jpg" width="100px">
-=======
-                            <img src="http://lorempixum.com/100/100/nature/4">
->>>>>>> 69bf85535f305e8634d350688d1fb96b690aa2b3
                         </article>
                           <h3 class = "rest_title_list">Stacks Pancake House</h3>
                           <p class = "rest_address_list">506 Washington St, Hoboken NJ 07030</p>
@@ -110,11 +94,7 @@ else
                         <li>
                             <a href = "./restaurant_5.html">
                           <article class = "chopped_img">
-<<<<<<< HEAD
                             <img src="./rest_pics/rest_icons/5.jpg" width="100px">
-=======
-                            <img src="http://lorempixum.com/100/100/nature/5">
->>>>>>> 69bf85535f305e8634d350688d1fb96b690aa2b3
                         </article>
                           <h3 class = "rest_title_list">Backyard Bistro</h3>
                           <p class = "rest_address_list">732 Jefferson St, Hoboken NJ 07030</p>

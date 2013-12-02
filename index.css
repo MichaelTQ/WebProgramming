@@ -73,9 +73,40 @@
     z-index: 11; /* 1px higher than the overlay layer */
 }
 
+#login_success {
+    /*width: 450px;
+    height: 350px;*/
+    width: 350px;
+    height: 250px;
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    margin-top: -200px;
+    /*margin-left: -220px;*/
+    margin-left: -180px;
+    background-color: #F7F7F7;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 11; /* 1px higher than the overlay layer */
+}
+
+#login_success p {
+    padding: 80px 0px 20px 0px;
+    font-size: 20px;
+}
+#login_success span {
+    font-size: 16px;
+}
+
 #login input[type = "text"],
 #login input[type = "password"]{
     margin: 8px;
     height: 20px;
     width: 240px;
+}
+
+#login_warning {
+    margin: 3px;
+    color: red;
+    opacity: 0;
 }
