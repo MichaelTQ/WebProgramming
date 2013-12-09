@@ -9,6 +9,7 @@ html {
 }
 
 body {
+    min-height: 900px;
     display: table;
     width: 980px;
     background-color: #F7F7F7;
@@ -418,4 +419,8 @@ table {
 #rest_list a:active {
     color: inherit;
     text-decoration: underline;
+}
+
+#signup_login_links {
+    margin-right: 25px;
 }

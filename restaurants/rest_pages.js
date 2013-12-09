@@ -51,8 +51,8 @@ if(arr_locations.length != 0)
       });
     }
     var menu_num = $('#my_menu_num').text();
-    $('.rest_menu').load("./menus/menu"+menu_num+".html");
-
+    //$('.rest_menu').load("./menus/menu"+menu_num+".html");
+    $('.rest_menu').load("./1/menu.html");
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -173,7 +173,7 @@ var tab_switch = function(id)
         document.getElementById("cus_form").style.display = "inline-block";
         document.getElementById("owners_form").style.display = "none";
         var signup_all = document.getElementById("signup_all");
-        signup_all.style.height = "300px";
+        signup_all.style.height = "320px";
         signup_all.style.width = "350px";
         signup_all.style.marginLeft = "-180px";
     }

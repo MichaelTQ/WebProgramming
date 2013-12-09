@@ -12,23 +12,23 @@ for (var i = 0; i != arr_states.length; i++)
 //tab switch function
 var tab_switch = function(id)
 {
-    var arr_li = [document.getElementById("tab1"), document.getElementById("tab2")];
+    var arr_li = [document.getElementById("signup_tab1"), document.getElementById("signup_tab2")];
     for (var j = 0; j != arr_li.length; j++)
     {
         arr_li[j].className = "";
     }
     document.getElementById(id).className = "selected";
     
-    if (id == "tab1")
+    if (id == "signup_tab1")
     {
         document.getElementById("cus_form").style.display = "inline-block";
         document.getElementById("owners_form").style.display = "none";
         var signup_all = document.getElementById("signup_all");
-        signup_all.style.height = "300px";
+        signup_all.style.height = "320px";
         signup_all.style.width = "350px";
         signup_all.style.marginLeft = "-180px";
     }
-    else if (id == "tab2")
+    else if (id == "signup_tab2")
     {
         document.getElementById("cus_form").style.display = "none";
         document.getElementById("owners_form").style.display = "inline-block";

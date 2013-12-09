@@ -1,0 +1,279 @@
+html, body {
+    
+}
+
+html {
+    background-color: #f5f5f1;
+    margin: 0px auto 0px auto;
+    display: table;
+}
+
+body {
+    min-height: 400px;/*********************/
+    
+    display: table;
+    width: 980px;
+    background-color: #F7F7F7;
+    border-left: 1px solid #8d8d8d;
+    border-right: 1px solid #8d8d8d;
+    border-bottom: 1px solid #8d8d8d;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 5px 0 5px -5px #C9C9C9, -5px 0 5px -5px #C9C9C9;
+}
+
+.whole_page {
+}
+
+#signup_login_aside {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+#name_links {
+    margin-right: 14px;
+}
+
+header {
+    background-color: #A0CDDB ;
+    /*margin-left: 5px;
+    margin-right: 5px;*/
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 70px;
+    border-bottom: 1px solid #8d8d8d;
+}
+
+#signup_login_links {
+    position: relative;
+    float: right;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+#signup_login_aside input[type = "text"] {
+    
+    margin-top: 10px;
+    width: 180px;
+    height: 15px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    color: #555555;
+    border: 1px solid #777;
+    font-size: 12px;
+    background: url("../icons/search_icon.png") no-repeat 5px;
+    background-size: 10px, 10px;
+    text-indent: 15px;
+    background-color: #f5f5f1;
+}
+
+#signup_login_links {
+    margin-right: 25px;
+}
+
+.myTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#personal_info_warning, #password_warning, #rest_warning, #rest_img_warning, #menu_warning {
+    color: red;
+    margin: 15px 0px 15px 0;
+}
+
+#menu_warning {
+    text-align: center;
+}
+
+.content_wrapper {
+    clear: both;
+}
+
+#left_form, #rest_left_wrapper {
+    margin: 20px 0px 10px 100px;
+    width: 400px;
+    float: left;
+    border-right: 1px dotted grey;
+}
+
+#left_form_cus {
+    margin: 20px 0px 10px 100px;
+    width: 400px;
+    float: left;
+    border-right: 1px dotted grey;
+}
+
+#rest_left_wrapper {
+    width: 380px;
+}
+
+#right_form, #rest_right_wrapper {
+    margin: 20px 70px 10px 10px;
+    width: 370px;
+    float: right;
+}
+
+#rest_right_wrapper {
+    margin-right: 70px;
+    width: 350px;
+}
+
+.content_wrapper label {
+    font-size: 17px;
+    width: 120px;
+    float: left;
+    text-align: left;
+}
+
+#rest_info label {
+    font-size: 17px;
+    width: 120px;
+    float: left;
+    text-align: left;
+}
+
+.content_wrapper input[type='password'], input[type='text'], input[type='email'] {
+    border: 1px solid #999999;
+    width: 150px;
+    height: 20px;
+    margin: 0px 0px 10px 0px;
+    padding: 1px;
+    border-radius: 3px;
+    text-indent: 7px;
+}
+
+#rest_info textarea {
+    border: 1px solid #999999;
+    width: 150px;
+    margin: 0px 0px 10px 0px;
+    padding: 1px;
+    border-radius: 3px;
+    text-indent: 7px;
+    height: 90px;
+    resize: none;
+}
+
+.content_wrapper select, #rest_info select {
+    margin: 0px 0px 10px 0px;
+    padding: 1px;
+}
+
+.content_wrapper button, input[type='button'], input[type='submit'] {
+    margin: 5px;
+    padding: 4px 8px 5px 8px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background-color: #EBEBEB;
+}
+
+#button_wrapper1 {
+    margin: 15px 0 0 90px;
+}
+
+#button_wrapper2 {
+    margin: 15px 0 0 160px;
+}
+
+#rest_info {
+    margin: 0px 20px 20px 20px;
+    padding-top: 20px;
+    border-top: 1px dashed grey;
+}
+
+#no_rest_notice {
+    text-align: center;
+}
+
+#rest_title, #add_menu_title {
+    text-align: center;
+}
+
+#rest_right_wrapper input[type='submit'] {
+    padding: 4px 8px 5px 8px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background-color: #EBEBEB;
+    margin: 15px 0 0 240px;
+}
+
+#rest_right_wrapper input[type='file'] {
+    margin-right: -20px;
+}
+
+#img_wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#img_wrapper img {
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+#edit_restaurant {
+    border-bottom: 1px dashed grey;
+}
+
+#add_menu {
+    padding: 20px 0px 20px 0px;
+}
+
+#menu_wrapper {
+    text-align: center;
+}
+
+#menu_wrapper table, td {
+    border-collapse: collapse;
+    border: 1px solid #bababa;
+}
+
+#menu_wrapper .dish_name {
+    width: 220px;
+}
+
+#menu_wrapper .price {
+    width: 50px;
+}
+
+#menu_wrapper input[type='text']{
+    margin: 5px 10px 5px 0px;
+}
+
+#menu_wrapper label{
+    margin: 5px 0px 5px 5px;
+    width: auto;
+}
+
+.cate_inputs label {
+    width: 120px;
+}
+
+.menu_category {
+    margin: 0px 210px 0px 220px;
+    border: 1px dotted #ccc;
+    text-align: left;
+    width: 465px;
+    padding: 0px 10px 0px 10px;
+}
+
+.cate_inputs {
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+.cate_inputs label {
+    width: 120px;
+}
+
+#menu_all_form {
+    margin-top: 5px;
+}
+
+#menu_submit {
+    margin-left: 500px;
+}
