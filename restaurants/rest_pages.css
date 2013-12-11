@@ -385,10 +385,25 @@ table {
   float: left;
   margin: 0 15px 0 0;
 }
+
+#rest_list .thumb{
+    float: left;
+    margin: 0 15px 0 0;
+}
+
+.rest_rating {
+    margin: 5px 0px 2px 0px;
+}
  
 .rest_address_list {
   font: 200 12px/1.5 Georgia, Times New Roman, serif;
+    margin: 2px 0px 2px 0px;
 }
+
+.rest_tel {
+    margin: 2px 0px 10px 0px;
+}
+
  
 #rest_list li {
     border-bottom: 1px dashed grey;
@@ -423,4 +438,31 @@ table {
 
 #signup_login_links {
     margin-right: 25px;
+}
+
+.thumb {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border: 1px solid grey;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+#review_form textarea {
+    width: 575px;
+    height: 50px;
+    resize: none;
+}
+
+#add_review {
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 10px;
+}
+
+#review_warning {
+    color: red;
+    margin-bottom: 10px;
 }

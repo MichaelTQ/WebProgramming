@@ -27,7 +27,7 @@ if(isset($_SESSION['uname']) != true)
 include '../user_db/login_display.php';
 ?>
                 </section>
-                <form method="post">
+                <form method="post" action = '../restaurants/restaurant_list.php' id = "search_form_id">
                     <input type = "text" name = "search_cont" placeholder = "Search...">
                 </form>
             </aside>
@@ -102,7 +102,9 @@ include '../user_db/login_display.php';
                 <article id = 'rest_right_wrapper'>
                     <div id = 'rest_img_warning'><br></div>
                     <article id = 'img_wrapper'>
-                        <img src = '../restaurants/icons/no_photo.PNG' alt = 'restaurant image' width="150px">
+<?php
+include './check_rest_icon.php';
+?>
                     </article>
                     <form method="post" action='owner_edit.php' enctype="multipart/form-data" id = 'img_upload_form'>
                         <label for = 'rest_icon_url'>image URL:</label>
@@ -121,6 +123,12 @@ include '../user_db/login_display.php';
 <?php
 include './menu_download.php';
 ?>
+                    
+<form action="./owner_edit.php" method="post" enctype="multipart/form-data" id = "menu_upload_form" onsubmit="return my_check_file();">
+<label for="menu_upload">upload menu:</label>
+<input type="file" name="menu_upload" id="menu_upload_id">
+<input type="submit" name="submit" value="Submit">
+</form>
                         <a href = '#!' onclick='my_add_category();'>Add category</a>
                         <a href = '#!' onclick='my_remove_category();'>Remove category</a>
                         <form method = 'post' action = 'owner_edit.php' id = 'menu_all_form'>
@@ -174,5 +182,11 @@ include './edit_restaurant_db.php';
 ?>
     </div>
     <script scr = 'http://code.jquery.com/jquery-latest.min.js'></script>
+<?php
+include './menu_upload.php';
+?>
+<?php
+include './img_upload.php';
+?>
 </body>
 </html>

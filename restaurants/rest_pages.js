@@ -50,39 +50,39 @@ if(arr_locations.length != 0)
         }
       });
     }
-    var menu_num = $('#my_menu_num').text();
+    //var menu_num = $('#my_menu_num').text();
     //$('.rest_menu').load("./menus/menu"+menu_num+".html");
-    $('.rest_menu').load("./1/menu.html");
+    //$('.rest_menu').load("./1/menu.html");
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
 $(document).ready(function() {
-    $("#content div").hide(); // Initially hide all content
+    $("#tab1, #tab2, #tab3").hide(); // Initially hide all content
     $("#tabs li:first").attr("id","current"); // Activate first tab
     $("#content div:first").fadeIn(); // Show first tab content
     
     $('#tabs a').click(function(e) {
         e.preventDefault();
         if ($(this).closest("li").attr("id") == "current"){ //detection for current tab
-         return       
+         return;
         }
         else{             
-        $("#content div").hide(); //Hide all content
+        $("#tab1, #tab2, #tab3").hide(); //Hide all content
         $("#tabs li").attr("id",""); //Reset id's
         $(this).parent().attr("id","current"); // Activate this
         $('#' + $(this).attr('name')).fadeIn(); // Show content for current tab
         }
-        if(document.getElementById('order_content_table').innerHTML.indexOf('onclick="click_addlinks()">Here</a> ') != -1)
-        {
-            var menu_num = $('#my_menu_num').text();
-            $('.rest_menu').load("./menus/menu"+menu_num+".html");
-        }
-        else
-        {
-            cancel_order();
-            var menu_num = $('#my_menu_num').text();
-            $('.rest_menu').load("./menus/menu"+menu_num+".html");
-        }
+//        if(document.getElementById('order_content_table').innerHTML.indexOf('onclick="click_addlinks()">Here</a> ') != -1)
+//        {
+//            //var menu_num = $('#my_menu_num').text();
+//            //$('.rest_menu').load("./menus/menu"+menu_num+".html");
+//        }
+//        else
+//        {
+//            //cancel_order();
+//            //var menu_num = $('#my_menu_num').text();
+//            //$('.rest_menu').load("./menus/menu"+menu_num+".html");
+//        }
     });
 });
 
@@ -118,15 +118,17 @@ function add_dish(id) {
 
 function cancel_order()
 {
-    var menu_num = $('#my_menu_num').text();
-    $('.rest_menu').load("./menus/menu"+menu_num+".html");
-    var default_order_content_html = "Click <a href = \"#!\" onclick = \"click_addlinks()\">Here</a> to start.<br><br>";
-    $('#order_content_table').html(default_order_content_html);
-    $('#order_table_id').css('display', 'none');
-    var default_table_html = "<thead><tr><th>Dish Name</th><th>Price</th></tr></thead><tbody><tr><td><strong>Totol Price:</strong></td><td><strong>$</strong></td></tr></tbody>";
-    $('#order_table_id').html(default_table_html);
-    $('.order_buttons').css('display', 'none');
-    global_total_price = 0;
+    var global_total_price = 0;
+    location.reload();
+    //var menu_num = $('#my_menu_num').text();
+    //$('.rest_menu').load("./menus/menu"+menu_num+".html");
+//    var default_order_content_html = "Click <a href = \"#!\" onclick = \"click_addlinks()\">Here</a> to start.<br><br>";
+//    $('#order_content_table').html(default_order_content_html);
+//    $('#order_table_id').css('display', 'none');
+//    var default_table_html = "<thead><tr><th>Dish Name</th><th>Price</th></tr></thead><tbody><tr><td><strong>Totol Price:</strong></td><td><strong>$</strong></td></tr></tbody>";
+//    $('#order_table_id').html(default_table_html);
+//    $('.order_buttons').css('display', 'none');
+//    global_total_price = 0;
 }
 
 $('.thumbnail').click(function() {
@@ -186,3 +188,18 @@ var tab_switch = function(id)
         document.getElementById("signup_all").style.marginLeft = "-230px";
     }
 };
+
+$('#search_form_id').submit(function (event){
+    if($('#search_form_id input[type="text"]').val().length == 0)
+    {
+        event.preventDefault();
+    }
+});
+
+$('#review_form').submit(function (event){
+    if($('#review_form textarea').val() == 0)
+    {
+        $('#review_warning').html('empty input not allowed!');
+        event.preventDefault();
+    }
+});

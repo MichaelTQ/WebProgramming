@@ -302,6 +302,7 @@ function login_success(user_name)
     function myReload()
     {
         location.reload();
+        //location.replace('./');
     }
     function myTimer()
     {

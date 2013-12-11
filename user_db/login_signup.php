@@ -240,6 +240,6 @@ if(isset($_POST['owner_signup_uname']) == TRUE)
         echo "</script>";
     }
     
-    echo '<hr>'.$uname.'<br>'.$email.'<br>'.$passwd.'<br>'.$fname.'<br>'.$lname.'<br>'.$tel.'<br>'.$straddr.'<br>'.$city.'<br>'.$zcode.'<br>'.$state.'<hr>';
+    //echo '<hr>'.$uname.'<br>'.$email.'<br>'.$passwd.'<br>'.$fname.'<br>'.$lname.'<br>'.$tel.'<br>'.$straddr.'<br>'.$city.'<br>'.$zcode.'<br>'.$state.'<hr>';
 }
 ?>

@@ -113,6 +113,8 @@ if(mysqli_num_rows($sql_result) >= 1)
             $sql_result = mysqli_query($link, $sql_insert_restcate);
             $counter++;
         }
+        echo "<script>location.reload();</script>";
+        
     }
     
     $sql_check_catedish = 'select cate_id, cate_name, description from rest_category, category where category.id = rest_category.cate_id and rest_category.rest_id = \''.$rest_id.'\';';
@@ -237,66 +239,68 @@ else
         }
     }
     
-    if(isset($_POST['cate_name']))
-    {
-        $arr_cate_name = $_POST['cate_name'];
-        $arr_cate_description = $_POST['cate_description'];
-        $counter = 0;
-        
-        $sql_get_cate_id = 'select cate_id from rest_category where rest_id = \''.$rest_id.'\';';
-        $sql_result = mysqli_query($link, $sql_get_cate_id) or die('Query failed');
-        $arr_cate_id = array();
-        while($row = mysqli_fetch_array($sql_result))
-        {
-            array_push($arr_cate_id, $row['cate_id']);
-        }
-        
-        if(count($arr_cate_id) != 0)
-        {
-            foreach($arr_cate_id as $cate_id)
-            {
-            //it has records, remove them first.
-            $sql_delete_records1 = 'delete from rest_category where rest_id = \''.$rest_id.'\';';
-            $sql_delete_records2 = 'delete from dish where cate_id = \''.$cate_id.'\';';
-            $sql_delete_records3 = 'delete from category where id = \''.$cate_id.'\'';
-            mysqli_query($link, $sql_delete_records1) or die("sql_delete_records1 failed!");
-            mysqli_query($link, $sql_delete_records2) or die("sql_delete_records2 failed!");
-            mysqli_query($link, $sql_delete_records3) or die("sql_delete_records3 failed!");
-            }
-        }
-        
-        for ($j = 0; $j < count($arr_cate_name); $j++)
-        {
-            $arr_dish_name = $_POST['cate'.strval($counter).'_dish_name'];
-            $arr_dish_price = $_POST['cate'.strval($counter).'_dish_price'];
-            $arr_length = count($arr_dish_name);
-            
-            //insert into category
-            
-            //first get cate_id
-            $sql_insert_cate = 'insert into category(cate_name, description) values(\''.$arr_cate_name[$j].'\', \''.$arr_cate_description[$j].'\');';
-            $sql_result = mysqli_query($link, $sql_insert_cate);
-            
-            $sql_get_cateid = 'select max(id) from category;';
-            $sql_result = mysqli_query($link, $sql_get_cateid);
-            while($row = mysqli_fetch_array($sql_result))
-            {
-                $tmp_cate_id = $row['max(id)'];
-            }
-            
-            for($i = 0; $i < $arr_length; $i++)
-            {
-                //insert into category
-                $sql_insert_dish = 'insert into dish(cate_id, dish_name, dish_price) values(\''.$tmp_cate_id.'\', \''.$arr_dish_name[$i].'\', \''.$arr_dish_price[$i].'\');';
-                $sql_result = mysqli_query($link, $sql_insert_dish) or die('insert into dish failed!');
-            }
-            
-            //insert into rest_category
-            $sql_insert_restcate = 'insert into rest_category values(\''.$rest_id.'\', \''.$tmp_cate_id.'\');';
-            $sql_result = mysqli_query($link, $sql_insert_restcate);
-            $counter++;
-        }
-    }
+//    if(isset($_POST['cate_name']))
+//    {
+//        $arr_cate_name = $_POST['cate_name'];
+//        $arr_cate_description = $_POST['cate_description'];
+//        $counter = 0;
+//        
+//        $sql_get_cate_id = 'select cate_id from rest_category where rest_id = \''.$rest_id.'\';';
+//        $sql_result = mysqli_query($link, $sql_get_cate_id) or die('Query failed');
+//        $arr_cate_id = array();
+//        while($row = mysqli_fetch_array($sql_result))
+//        {
+//            array_push($arr_cate_id, $row['cate_id']);
+//        }
+//        
+//        if(count($arr_cate_id) != 0)
+//        {
+//            foreach($arr_cate_id as $cate_id)
+//            {
+//            //it has records, remove them first.
+//            $sql_delete_records1 = 'delete from rest_category where rest_id = \''.$rest_id.'\';';
+//            $sql_delete_records2 = 'delete from dish where cate_id = \''.$cate_id.'\';';
+//            $sql_delete_records3 = 'delete from category where id = \''.$cate_id.'\'';
+//            mysqli_query($link, $sql_delete_records1) or die("sql_delete_records1 failed!");
+//            mysqli_query($link, $sql_delete_records2) or die("sql_delete_records2 failed!");
+//            mysqli_query($link, $sql_delete_records3) or die("sql_delete_records3 failed!");
+//            }
+//        }
+//        
+//        for ($j = 0; $j < count($arr_cate_name); $j++)
+//        {
+//            $arr_dish_name = $_POST['cate'.strval($counter).'_dish_name'];
+//            $arr_dish_price = $_POST['cate'.strval($counter).'_dish_price'];
+//            $arr_length = count($arr_dish_name);
+//            
+//            //insert into category
+//            
+//            //first get cate_id
+//            $sql_insert_cate = 'insert into category(cate_name, description) values(\''.$arr_cate_name[$j].'\', \''.$arr_cate_description[$j].'\');';
+//            $sql_result = mysqli_query($link, $sql_insert_cate);
+//            
+//            $sql_get_cateid = 'select max(id) from category;';
+//            $sql_result = mysqli_query($link, $sql_get_cateid);
+//            while($row = mysqli_fetch_array($sql_result))
+//            {
+//                $tmp_cate_id = $row['max(id)'];
+//            }
+//            
+//            for($i = 0; $i < $arr_length; $i++)
+//            {
+//                //insert into category
+//                $sql_insert_dish = 'insert into dish(cate_id, dish_name, dish_price) values(\''.$tmp_cate_id.'\', \''.$arr_dish_name[$i].'\', \''.$arr_dish_price[$i].'\');';
+//                $sql_result = mysqli_query($link, $sql_insert_dish) or die('insert into dish failed!');
+//            }
+//            
+//            //insert into rest_category
+//            $sql_insert_restcate = 'insert into rest_category values(\''.$rest_id.'\', \''.$tmp_cate_id.'\');';
+//            $sql_result = mysqli_query($link, $sql_insert_restcate);
+//            $counter++;
+//        }
+//        
+//        echo "<script>location.reload();</script>";
+//    }
 }
 
 mysqli_close($link);

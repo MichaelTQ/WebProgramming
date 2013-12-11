@@ -94,6 +94,21 @@ create table if not exists rest_category (
 	constraint fk_cate_rest foreign key(cate_id) references category(id)
 );
 
+drop table if exists review;
+create table review
+(
+	id_review int NOT NULL auto_increment,
+	id_cust int NOT NULL,
+	cust varchar(255),
+	id_rest int NOT NULL,
+	rating int,
+	content varchar(255),
+	date varchar(255),
+	primary key (id_review),
+	constraint fk_review_nor foreign key (id_cust) references normal_user(id),
+	constraint fk_review_rest foreign key(id_rest) references shop_info(id)
+);
+
 select * from user;
 select * from normal_user;
 select * from shop_owner;
@@ -126,8 +141,11 @@ insert into admin_user(id) values(6);
 
 
 
+
 select * from shop_info;
 truncate category;
+
+select * from review;
 
 select * from own_shop;
 
@@ -164,3 +182,26 @@ select * from category, rest_category where category.id = rest_category.cate_id 
 select * from dish where cate_id = 57;
 
 select * from dish where cate_id = 57;
+SELECT * FROM shop_info;
+select * from dish;
+
+select * from shop_info where shop_name like '%rest%';
+
+select distinct shop_info.id, shop_info.shop_phone, shop_info.shop_name,
+shop_info.rating, shop_info.icon_url, shop_info.straddr, shop_info.city, shop_info.state, shop_info.zipcode
+from shop_info, rest_category, dish where
+shop_info.id = rest_category.rest_id and
+rest_category.cate_id = dish.cate_id and 
+dish.dish_name like '%soup%';
+
+select * from user, own_shop, shop_owner where user.id = shop_owner.id and own_shop.user_id = user.id
+and own_shop.shop_id = 1 and user.user_name = 'owner';
+
+select * from shop_info;
+
+update shop_info set rating = null, rating_count = null where id = '4';
+
+select distinct user.user_name, review.content, review.rating from review, user where user.id = review.id_cust and id_rest = '4';
+
+
+select distinct user.user_name, review.content, review.rating from review, user where user.id = review.id_cust and id_rest = '4'; 

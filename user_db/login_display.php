@@ -1,7 +1,7 @@
 <?php
 if(isset($_SESSION['uname']))
 {
-    if(isset($_SESSION['page']) and $_SESSION['page'] == 'results')
+    if(isset($_SESSION['page']) and ($_SESSION['page'] == 'results' or $_SESSION['page'] == 'restaurant_page'))
     {
         if(isset($_SESSION['privilege']) and $_SESSION['privilege'] == 'customer')
         {
@@ -15,8 +15,8 @@ if(isset($_SESSION['uname']))
         }
         else if(isset($_SESSION['privilege']) and $_SESSION['privilege'] == 'admin')
         {
-            echo "<span id = 'username_upright'>".$_SESSION['uname']
-                ." <a href = '../user_db/logout.php'>Logout</a></span>";
+            echo "<span id = 'username_upright'><a href = '../user_edit/admin_page.php'>".$_SESSION['uname']
+                ."</a> <a href = '../user_db/logout.php'>Logout</a></span>";
         }
     }
     else if (isset($_SESSION['page']) and $_SESSION['page'] == 'index')
@@ -33,8 +33,8 @@ if(isset($_SESSION['uname']))
         }
         else if(isset($_SESSION['privilege']) and $_SESSION['privilege'] == 'admin')
         {
-            echo "<span id = 'username_upright'>".$_SESSION['uname']
-                ." <a href = './user_db/logout.php'>Logout</a></span>";
+            echo "<span id = 'username_upright'><a href = './user_edit/admin_page.php'>".$_SESSION['uname']
+                ."</a> <a href = './user_db/logout.php'>Logout</a></span>";
         }
     }
     else if (isset($_SESSION['page']) and $_SESSION['page'] == 'owner_edit')
@@ -46,7 +46,12 @@ if(isset($_SESSION['uname']))
     {
         echo "<span id = 'username_upright'>".$_SESSION['uname']
             ." <a href = '../user_db/logout.php'>Logout</a></span>";
-    } 
+    }
+    else if(isset($_SESSION['page']) and $_SESSION['page'] == 'admin_page')
+    {
+        echo "<span id = 'username_upright'>".$_SESSION['uname']
+            ." <a href = '../user_db/logout.php'>Logout</a></span>";
+    }
 }
 else
 {

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<?php 
+	error_reporting("E_ALL");
+	include("./db.inc.php");
+	$linkid = connect();
+	mysql_select_db("DGuys");
+	
+	//////// set attr from session ///////
+	$custId = 101;
+	$restId = 1;
+	$cust = 'Gelford';
+	///////////////////////////////////
+				
+	if (isset($_POST['rating']))
+	{
+		$today = date("F j, Y");  	
+		$rating = $_POST['rating'];
+		$reviewText = $_POST['reviewText'];
+
+		//clear content
+		$reviewText = strip_tags($reviewText);
+		$reviewText = addslashes($reviewText);
+		
+		$sql = "INSERT INTO review (id_cust,cust,id_rest,rating,content,date) VALUES('".$custId."','".$cust."','".$restId."','".$rating."','".$reviewText."','".$today."');";
+		$res = mysql_query($sql);
+	}	
+?>
+
+<html>
+<head>
+    <title>Review Page</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+			$(document).on('click', ':submit', function()
+			{
+				location.reload();
+			});
+        });
+    </script>
+    
+    <style>
+	    .review{
+		    width: 300px;
+	    }
+    </style>
+</head>    
+<body>
+    <div id="review">
+    
+        <section class="reviewInput">
+            <article>
+                <form method="post" action="review.php">
+					<select name="rating" id="rating">
+					<option value="1">1 of 5 stars</option>
+					<option value="2">2 of 5 stars</option>
+					<option value="3">3 of 5 stars</option>
+					<option value="4">4 of 5 stars</option>
+					<option value="5">5 of 5 stars</option>
+					</select><br>
+                    <textarea id="reviewText" name="reviewText"></textarea><br>
+                    <input type="submit" value="Submit"><br>
+                </form>
+            </article><hr>
+        </section>
+        
+        <section id="reviewList">
+        
+        <?php
+			$sql = "SELECT * FROM review WHERE id_rest='".$restId."';";
+							        
+			$result = mysql_query($sql);
+		    if (!$result) 
+		    {
+				echo "Database error!<BR>".mysql_error()."<BR>";
+			}
+			else if (mysql_num_rows($result) == 0) 
+			{
+				echo "No Review";
+			}
+			else
+			{
+				while ($review = mysql_fetch_assoc($result))
+				{		
+		?>
+		   	<article>
+            	<span>
+            		<?php 
+            			$strStar = "* ";
+            			for ($i = 0; $i<($review['rating']-1); $i++)
+            			{
+	            			$strStar = $strStar."* ";
+            			}
+            			echo $strStar;
+	            		
+            		?> 
+               	</span>
+	            <span style="color:grey">
+	            	<?php echo $review['date']; ?>
+	            </span>
+	            <br>
+	            <span>By </span>
+	            <span>
+	            	<?php echo $review['cust']; ?>
+	            </span>
+	            <p>
+		       		<?php echo stripslashes($review['content']); ?> 
+	            </p>
+            </article><hr>
+		
+		<?php
+				}
+			}
+		?>
+ 
+        </section>
+    </div>
+</body>
+</html>

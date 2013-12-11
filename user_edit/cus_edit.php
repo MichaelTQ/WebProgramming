@@ -27,7 +27,7 @@ if(isset($_SESSION['uname']) != true)
 include '../user_db/login_display.php';
 ?>
                 </section>
-                <form method="post">
+                <form method="post" action = "../restaurants/restaurant_list.php" id ="search_form_id">
                     <input type = "text" name = "search_cont" placeholder = "Search...">
                 </form>
             </aside>

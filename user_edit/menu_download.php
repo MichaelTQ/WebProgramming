@@ -69,6 +69,7 @@ if(mysqli_num_rows($sql_result) >= 1)
         fwrite($handle, $menu_html);
         
         echo "Click <a href='".$file."' target='_blank'>HERE</a> to download your menu<br>\n";
+        
     }
 }
 ?>

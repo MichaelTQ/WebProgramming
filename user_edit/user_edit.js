@@ -553,3 +553,9 @@ function my_update_allmenus()
     }
 }
 
+$('#search_form_id').submit(function (event) {
+    if($('#search_form_id input[type="text"]').val().length == 0)
+    {
+        event.preventDefault();
+    }
+});
